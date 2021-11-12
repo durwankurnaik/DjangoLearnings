@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Text Utils</title>
+    <script>
+        h1 {
+            align-text: center;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the text analyzer website</h1>
+    <form action="analyse" method="get">
+        <textarea name="text" style="margin: 0px 1377px 0px 0px; width: 496px; height: 195px;"></textarea>
+
+        <input type="checkbox" name="removepunc">Remove punctuation mark<br>
+        <input type="checkbox" name="capfirst">Capitalize all letters<br>
+        <input type="checkbox" name="newlineremove">Remove new line<br>
+        <input type="checkbox" name="spaceremove">Remove all spaces<br>
+        <input type="checkbox" name="charcount">Counts the number of character<br>
+
+        <button type="submit">Analyse text</button>
+    </form>
+</body>
+</html>
