@@ -2,87 +2,51 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
-# Some time-pass content
-# def index(request):
-#     return HttpResponse('''
-# <ul>
-#     <li><h1>Spring</h1></li>
-#     <h3>
-#         <ul>
-#             <li>
-#                 <a href="https://www.youtube.com/playlist?list=PL0zysOflRCekeiERASkpi-crREVensZGS">
-#                 Spring Framework Tutorial
-#                 </a>
-#             </li>
-#             <li>
-#                 <a href="https://www.youtube.com/playlist?list=PL0zysOflRCelAb51IrexpUSeB0dpr9p6g">
-#                 Spring MVC Tutorials
-#                 </a>
-#             </li>
-#             <li>
-#                 <a href="https://www.youtube.com/playlist?list=PL0zysOflRCelmjxj-g4jLr3WKraSU_e8q">
-#                     Spring Boot Tutorial
-#                 </a>
-#             </li>
-#         </ul>
-#         <li><h1>Django</h1></li>
-#         <ul>
-#             <li>
-#                 <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9ah7DDtYtflgwMwpT3xmjXY9">
-#                     Django Framework Tutorial
-#                 </a>
-#             </li>
-#         </ul>
-#     </h3>
-# </ul>
-# ''')
-# By the use of above method "HttpResponse()", the django decodes html given within the python file
-
 # Text utils website
 def index(request):
     return render(request, 'index.html')
 
 
 def analyse(request):
-    djtext = str(request.GET.get('text', 'default'))
-    removepunc = request.GET.get('removepunc', 'off')
-    capsall = request.GET.get('capsall', 'off')
-    newlineremove = request.GET.get('newlineremove', 'off')
-    spaceremove = request.GET.get('spaceremove', 'off')
-    charcount = request.GET.get('charcount', 'off')
+    input_data = str(request.GET.get('inpText', 'default')) # Converting the input type to str so that all the built in string methods can be used by it
+
+    # The values from the checkboxes stored in the below variables
+    want_punc_removed = request.GET.get('puncRemover', 'off')
+    want_allcaps = request.GET.get('allCaps', 'off')
+    want_newline_removed = request.GET.get('newlRemover', 'off')
+    want_space_removed = request.GET.get('spaceRemover', 'off')
+    charcount = request.GET.get('charCounter', 'off')
 
     punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-    punc_remove = ""
-    nl_remove = ""
-    space_remove = ""
-
     params = {}
 
-    if removepunc == 'on':
-        for char in djtext:
+    if want_punc_removed == 'on':
+        punc_remove = ""
+        for char in input_data:
             if char not in punctuations:
                 punc_remove += char
         params['puncremoved'] = punc_remove
 
-    if newlineremove == 'on':
-        for char in djtext:
+    if want_newline_removed == 'on':
+        nl_remove = ""
+        for char in input_data:
             if char != '\n':
                 nl_remove += char
         params['nlremoved'] = nl_remove
 
-    if spaceremove == 'on':
-        for char in djtext:
+    if want_space_removed == 'on':
+        space_remove = ""
+        for char in input_data:
             if char != ' ':
                 space_remove += char
         params['spaceremoved'] = space_remove
 
-    if capsall == 'on':
-        caps_all = djtext.upper()
+    if want_allcaps == 'on':
+        caps_all = input_data.upper()
         params['capsall'] = caps_all
 
     if charcount == 'on':
-        char_count = len(djtext)
+        char_count = len(input_data)
         params['charcount'] = char_count
 
     return render(request, 'analyse.html', params)
