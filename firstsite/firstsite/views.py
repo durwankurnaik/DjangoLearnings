@@ -47,7 +47,7 @@ def index(request):
 def analyse(request):
     djtext = str(request.GET.get('text', 'default'))
     removepunc = request.GET.get('removepunc', 'off')
-    capsall = request.GET.get('capfirst', 'off')
+    capsall = request.GET.get('capsall', 'off')
     newlineremove = request.GET.get('newlineremove', 'off')
     spaceremove = request.GET.get('spaceremove', 'off')
     charcount = request.GET.get('charcount', 'off')
