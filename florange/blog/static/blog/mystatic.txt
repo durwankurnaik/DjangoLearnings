@@ -1,0 +1,1 @@
+This is a normal text file and this will demonstrate the use of files in Django
