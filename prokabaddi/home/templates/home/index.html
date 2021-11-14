@@ -27,11 +27,25 @@
 		#winners {
 			text-decoration: underline;
 		}
-	
-	
+		.album {
+			margin-top: 200px;
+		}
+		.player-images {
+			height: 300px;
+		}
+		.text-raiders-section {
+			text-align: center;
+			margin-top: -150px;
+			margin-bottom: 30px;
+		}
+		.text-defenders-section {
+			text-align: center;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
 	</style>
 </head>
-<body>
+<body class="bg-light">
 <!--  Header-->
 <header class="navigation-bar d-flex bg-dark justify-content-center py-3">
 	<ul class="nav nav-pills">
@@ -39,7 +53,6 @@
 		<li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
 		<li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
 		<li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-		<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
 	</ul>
 </header>
 
@@ -50,62 +63,97 @@
 
 <!--Main part of the website-->
 <!--Some card elements-->
-<h2 class="below-table">Most raid points till season 7</h2>
-<div class="card-group container">
-	<div class="card">
-		<img alt="..." class="card-img-top" height="70%" src="{% static 'home/players/pardeep.jpg' %}">
-		<div class="card-body">
-			<h5 class="card-title">Pardeep Narwal</h5>
-			<p class="card-text">He started his journey as bench player in Bengaluru Bulls and played as substitute when
-				there was a need for the team.
-				In season 3, he was in his prime ans score a magnificent of 1160 Raid points in his PKL career</p>
-		</div>
-	</div>
-	<div class="card">
-		<img alt="..." class="card-img-top" height="65%" src="{% static 'home/players/rahul.jpg' %}">
-		<div class="card-body">
-			<h5 class="card-title">Rahul Chaudhari</h5>
-			<p class="card-text">He was the star player for Telugu Titans from start. He was the first player to reach
-				the target of 500 raid points in PKL. He holds 955 raid points as of 2019</p>
-		</div>
-	</div>
-	<div class="card">
-		<img alt="..." class="card-img-top" height="75%" src="{% static 'home/players/deepak.jpg' %}">
-		<div class="card-body">
-			<h5 class="card-title">Deepak Hooda</h5>
-			<p class="card-text">One of the best all-rounders. played for various teams like Telugu Titans, Puneri
-				Paltan, Jaipur Pink Panthers. He holds 858 raid points by his side</p>
-		</div>
-	</div>
-</div>
 
-<h2 class="below-table">Most tackle points till season 7</h2>
-<div class="card-group container">
-	<div class="card">
-		<img alt="..." class="card-img-top" height="75%" src="{% static 'home/players/manjeet.jpg' %}">
-		<div class="card-body">
-			<h5 class="card-title">Manjeet Chillar</h5>
-			<p class="card-text">One of the most reliable player and a great captain. Manjeet holds the most tackle
+
+<main>
+	{% load static %}
+	<div class="album bg-light">
+		<div class="container">
+			<h2 class="text-raiders-section">Top raiders of all time</h2>
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/pardeep.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Pardeep Narwal</strong><br>He started his journey with Bengaluru Bulls and was a substitute for the team.
+				In season 3, he was in his prime He has 1160 Raid points in his PKL career</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/rahul.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Rahul Chaudhari</strong><br>He was the star player for Telugu Titans from start. He was the first player to reach
+				the target of 500 raid points in PKL. He holds 955 raid points as of 2019</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/deepak.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Deepak Hooda</strong><br>One of the best all-rounders. played for various teams like Telugu Titans, Puneri
+				Paltan, Jaipur Pink Panthers. He holds 858 raid points by his side</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<h2 class="text-defenders-section">Top Defneders of all time</h2>
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/manjeet.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Manjeet Chillaer</strong><br>One of the most reliable player and a great captain. Manjeet holds the most tackle
 				points on his side. He has 339 tackle points by his side</p>
-		</div>
-	</div>
-	<div class="card">
-		<img alt="..." class="card-img-top" height="68%" src="{% static 'home/players/ravindar.jpg' %}">
-		<div class="card-body">
-			<h5 class="card-title">Ravindar Pahal</h5>
-			<p class="card-text">Ravindar is a aggresive and a fierce player. He always gets his tackle successfully
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/ravindar.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Ravindar Pahal</strong><br>Ravindar is a aggresive and a fierce player. He always gets his tackle successfully
 				executed. He holds 326 tackle points in his name</p>
-		</div>
-	</div>
-	<div class="card">
-		<img alt="..." class="card-img-top" height="75%" src="{% static 'home/players/fazal.jpg' %}">
-		<div class="carjustify-content-centerd-body">
-			<h5 class="card-title">Fazel Attrachali</h5>
-			<p class="card-text">The Iranian player started his journey with Patna pirates now plays for U mumba. He has
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/fazal.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Fazal Atrachali</strong><br>The Iranian player started his journey with Patna pirates now plays for U mumba. He has
 				317 tackle points in his PKL career</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+
+</main>
 
 <h2 class="below-table">Winners of Pro Kabaddi league season 7 <strong id="winners">Bengal Warriors</strong></h2>
 
@@ -203,7 +251,6 @@
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/players">Players</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/teams">Teams</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/register">Register</a></li>
-		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/about">About</a></li>
 	</ul>
 </footer>
 

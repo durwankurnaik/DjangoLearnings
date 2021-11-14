@@ -3,7 +3,7 @@ from .models import *
 
 # Register your models here.
 
-admin.site.register(TimeTable)
-admin.site.register(Player)
-admin.site.register(Register)
 admin.site.register(PointsTable)
+admin.site.register(Player)
+admin.site.register(TeamInfo)
+admin.site.register(Register)

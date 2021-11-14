@@ -10,8 +10,23 @@
 	      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
 	
 	<title>Players | Pro Kabaddi League</title>
+	<style>
+		.block-image {
+			height: 50vh;
+			width: 100%;
+			margin-top: -70px;
+			margin-bottom: 10px;
+		}
+		.album {
+			margin-top: -200px;
+		}
+		.player-images {
+			height: 250px;
+		}
+	
+	</style>
 </head>
-<body>
+<body class="bg-light">
 <!--  Header-->
 <header class="d-flex justify-content-center bg-dark py-3">
 	<ul class="nav nav-pills">
@@ -19,21 +34,151 @@
 		<li class="nav-item"><a aria-current="page" class="nav-link active" href="/players">Players</a></li>
 		<li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
 		<li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-		<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
 	</ul>
 </header>
 
+<main>
+	{% load static %}
+	<section class="block-image py-5 text-center container">
+		<div class="row py-lg-5">
+			<div class="col-lg-6 col-md-8 mx-auto">
+				<h1 class="fw-light"><strong>Hall of Fame</strong></h1>
+				<p class="lead text-muted"><strong>Some great players kabaddi has seen.</strong><br>
+					Records don't make champions, the amount of hardwork one does and is willing to bet everything
+					makes.
+				</p>
+			</div>
+		</div>
+	</section>
+	
+	<div class="album bg-light">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/anup1.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Anup Kumar</strong><br>One of the best captain PKL has ever
+								seen. He is the best player of all time</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/pardeep2.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Pardeep Narwal</strong><br>Motivation for lots of younsters and
+								probably the most fit and fine player</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/rahul3.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Rahul Chadhary</strong><br>One of the great player with
+								extra-ordinary talent. His performance in world cup helped india alot</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/deepak4.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Deepak Hooda</strong><br>One of the best all-rounder with a
+								very sharp mind. His work for telugu titans and puneri paltan is fabulous</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/sandeep5.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Sandeep Narwal</strong><br>One of the strongest player in
+								kabaddi. He dominates his opponent with his magnificent strength</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/ajay6.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Ajay Thakur</strong><br>Player with infinite supply of talent.
+								His performance in world cup was a major reason in India's winning</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/naveen7.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Naveen kumar</strong><br>A young face with a lot of talent and
+								dedication. His game has bought him so far, he is one of the best</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/pawan8.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Pawan Sehrawat</strong><br>Started as a substitute player, was
+								the MVP of Bengaluru bulls and helped a lot in their first win</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow-sm">
+						<img class="player-images" src="{% static 'home/players/rishank9.jpg' %}">
+						
+						<div class="card-body">
+							<p class="card-text"><strong>Rishank Devadiga</strong><br>Do or die specialist. Played for
+								Mumbai and U.P. Also selected for India in world cup</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
 
 <!--Footer-->
 <footer class="d-flex flex-wrap justify-content-between container align-items-center py-3 my-4 border-top">
-	<p class="col-md-4 mb-0 text-muted">© 2021 Company, Inc</p>
+	<p class="col-md-4 mb-0 text-muted">© 2021 Pro Kabaddi, Inc</p>
 	
 	<ul class="nav col-md-4 justify-content-end">
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/">Home</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/players">Players</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/teams">Teams</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/register">Register</a></li>
-		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/about">About</a></li>
 	</ul>
 </footer>
 

@@ -10,8 +10,20 @@
 	      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
 	
 	<title>Register | Pro Kabaddi League</title>
+	<style>
+		.heading {
+			text-align: center;
+		}
+		.sometext {
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			text-decoration: underline;
+		}
+	
+	</style>
 </head>
-<body>
+<body class="bg-light">
 <!--  Header-->
 <header class="d-flex justify-content-center bg-dark py-3">
 	<ul class="nav nav-pills">
@@ -19,21 +31,120 @@
 		<li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
 		<li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
 		<li class="nav-item"><a aria-current="page" class="nav-link active" href="/register">Register</a></li>
-		<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
 	</ul>
 </header>
 
+<h2 class="container heading mt-3">Please fill all the fields below</h2>
+<h4 class="heading small">Enter correct information. this won't be changed again</h4>
+
+<div class="mb-3 mt-3 container">
+	<label class="form-label mt-3" for="exampleFormControlInput1">ID no</label>
+	<input class="form-control" id="exampleFormControlInput1" name="player_id" type="number">
+	
+	<label class="form-label mt-3" for="exampleFormControlInput2">User name</label>
+	<input class="form-control" id="exampleFormControlInput2" name="username" type="text">
+	
+	<label class="form-label mt-3" for="exampleFormControlInput3">Full Name</label>
+	<input class="form-control" id="exampleFormControlInput3" name="name" type="text">
+	
+	<label class="form-label mt-3" for="exampleFormControlInput4">Place</label>
+	<input class="form-control" id="exampleFormControlInput4" name="place" type="text">
+	
+	<label class="form-label mt-3" for="exampleFormControlInput5">Date of Birth</label>
+	<input class="form-control" id="exampleFormControlInput5" name="dob" type="date">
+</div>
+
+<div class="mt-3 mb-3">
+	<h2 class="sometext">New Player Entries</h2>
+</div>
+
+<table class="table container table-striped">
+	<thead>
+	<tr>
+		<th scope="col">Sr no</th>
+		<th scope="col">UserName</th>
+		<th scope="col">Name</th>
+		<th scope="col">Place</th>
+		<th scope="col">Date of Birth</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">1</th>
+		<td>sparrxw</td>
+		<td>Durwankur Naik</td>
+		<td>Vengurla</td>
+		<td>14-03-2002</td>
+	</tr>
+	<tr>
+		<th scope="row">2</th>
+		<td>Fusion</td>
+		<td>Anmol Dhar</td>
+		<td>Jammu</td>
+		<td>17-07-2001</td>
+	</tr>
+	<tr>
+		<th scope="row">3</th>
+		<td>Gh0s7</td>
+		<td>Shreyas Patole</td>
+		<td>Nagpur</td>
+		<td>29-09-2001</td>
+	</tr>
+	<tr>
+		<th scope="row">4</th>
+		<td>Rasty Ross</td>
+		<td>Sashwat Rout</td>
+		<td>Pune</td>
+		<td>22-10-2001</td>
+	</tr>
+	<!--    Just creating test rows to fill data later from database-->
+	<tr>
+		<th scope="row">5</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th scope="row">6</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th scope="row">7</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th scope="row">8</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th scope="row">9</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
 
 <!--Footer-->
 <footer class="d-flex flex-wrap justify-content-between align-items-center container py-3 my-4 border-top">
-	<p class="col-md-4 mb-0 text-muted">© 2021 Company, Inc</p>
+	<p class="col-md-4 mb-0 text-muted">© 2021 Pro Kabaddi, Inc</p>
 	
 	<ul class="nav col-md-4 justify-content-end">
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/">Home</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/players">Players</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/teams">Teams</a></li>
 		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/register">Register</a></li>
-		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/about">About</a></li>
 	</ul>
 </footer>
 

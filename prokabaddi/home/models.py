@@ -4,18 +4,6 @@ from django.db import models
 # Create your models here.
 
 
-class TimeTable(models.Model):
-    match_no = models.IntegerField(default=0)
-    venue = models.CharField(max_length=20)
-    date = models.DateField()
-    time = models.TimeField()
-    home_team = models.CharField(max_length=100)
-    opp_team = models.CharField(max_length=100)
-
-    def __str__(self):
-        return 'Match number ' + str(self.match_no)
-
-
 class Register(models.Model):
     user = models.CharField(max_length=25)
     name = models.CharField(max_length=50)
@@ -32,6 +20,20 @@ class Player(models.Model):
     age = models.IntegerField(default=0)
     team_name = models.CharField(max_length=50)
     player_type = models.CharField(max_length=25)
+    description = models.CharField(max_length=500, default="")
+
+    def __str__(self):
+        return self.name
+
+
+class TeamInfo(models.Model):
+    rank = models.IntegerField(default=0)
+    name = models.CharField(max_length=50)
+    played = models.IntegerField()
+    won = models.IntegerField()
+    loss = models.IntegerField()
+    tie = models.IntegerField()
+    description = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return self.name
@@ -46,4 +48,4 @@ class PointsTable(models.Model):
     tie = models.IntegerField(default=0)
 
     def __str__(self):
-        return 'Rank ' + str(self.rank)
+        return str(self.rank) + ', ' + str(self.name)

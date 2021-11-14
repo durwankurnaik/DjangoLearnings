@@ -16,7 +16,3 @@ def teams(request):
 
 def register(request):
     return render(request, 'home/register.html')
-
-
-def about(request):
-    return render(request, 'home/about.html')
