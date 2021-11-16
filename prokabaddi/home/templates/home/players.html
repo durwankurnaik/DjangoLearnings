@@ -56,11 +56,10 @@
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/anup1.jpg' %}">
+						<img class="player-images" src="/media/{{ players.0.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Anup Kumar</strong><br>One of the best captain PKL has ever
-								seen. He is the best player of all time</p>
+							<p class="card-text"><strong>{{ players.0.name }}</strong><br>{{ players.0.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -71,8 +70,7 @@
 						<img class="player-images" src="{% static 'home/players/pardeep2.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Pardeep Narwal</strong><br>Motivation for lots of younsters and
-								probably the most fit and fine player</p>
+							<p class="card-text"><strong>{{ players.1.name }}</strong><br>{{ players.1.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -83,8 +81,7 @@
 						<img class="player-images" src="{% static 'home/players/rahul3.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Rahul Chadhary</strong><br>One of the great player with
-								extra-ordinary talent. His performance in world cup helped india alot</p>
+							<p class="card-text"><strong>{{ players.2.name }}</strong><br>{{ players.2.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -96,8 +93,7 @@
 						<img class="player-images" src="{% static 'home/players/deepak4.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Deepak Hooda</strong><br>One of the best all-rounder with a
-								very sharp mind. His work for telugu titans and puneri paltan is fabulous</p>
+							<p class="card-text"><strong>{{ players.3.name }}</strong><br>{{ players.3.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -108,8 +104,7 @@
 						<img class="player-images" src="{% static 'home/players/sandeep5.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Sandeep Narwal</strong><br>One of the strongest player in
-								kabaddi. He dominates his opponent with his magnificent strength</p>
+							<p class="card-text"><strong>{{ players.4.name }}</strong><br>{{ players.4.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -120,8 +115,7 @@
 						<img class="player-images" src="{% static 'home/players/ajay6.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Ajay Thakur</strong><br>Player with infinite supply of talent.
-								His performance in world cup was a major reason in India's winning</p>
+							<p class="card-text"><strong>{{ players.5.name }}</strong><br>{{ players.5.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -133,8 +127,7 @@
 						<img class="player-images" src="{% static 'home/players/naveen7.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Naveen kumar</strong><br>A young face with a lot of talent and
-								dedication. His game has bought him so far, he is one of the best</p>
+							<p class="card-text"><strong>{{ players.6.name }}</strong><br>{{ players.6.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -145,8 +138,7 @@
 						<img class="player-images" src="{% static 'home/players/pawan8.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Pawan Sehrawat</strong><br>Started as a substitute player, was
-								the MVP of Bengaluru bulls and helped a lot in their first win</p>
+							<p class="card-text"><strong>{{ players.7.name }}</strong><br>{{ players.7.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -157,8 +149,7 @@
 						<img class="player-images" src="{% static 'home/players/rishank9.jpg' %}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Rishank Devadiga</strong><br>Do or die specialist. Played for
-								Mumbai and U.P. Also selected for India in world cup</p>
+							<p class="card-text"><strong>{{ players.8.name }}</strong><br>{{ players.8.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>

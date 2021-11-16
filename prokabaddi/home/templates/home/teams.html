@@ -75,14 +75,11 @@
 		
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading">Most Successfull team.<br> <span class="text-muted">U Mumba.</span></h2>
-				<p class="lead">Played a total of 131 matches in total with 81 won, 42 loss and 8 Draws. They have the
-					highest win % of 61.83%, lowest loss percentage of 32.06% and even the lowest tie ratio of about
-					6.10%.
-					Anup kumar definitely played a great role in the success of U Mumba</p>
+				<h2 class="featurette-heading">Most Successfull team.<br> <span class="text-muted">{{ team_info.0.name }}</span></h2>
+				<p class="lead">{{ team_info.0.description }}</p>
 			</div>
 			<div class="col-md-5">
-				<img class="poster-img" src="{% static 'home/teams/poster-1.jpg' %}">
+				<img class="poster-img" src="/media/{{ team_info.0.image }}">
 			</div>
 		</div>
 		
@@ -90,16 +87,11 @@
 		
 		<div class="row featurette">
 			<div class="col-md-7 order-md-2">
-				<h2 class="featurette-heading">Here comes the next giants.<br> <span class="text-muted">Patna Pirates.</span>
-				</h2>
-				<p class="lead">They are definitely one of the best team in Pro Kabaddi league. They won total of 3
-					titles out of 7. They are the best team when it comes to winnig championship.
-					Major reason being their star raider Pardeep Narwal. Sandeep Narwal ans Rahul Kumal also played
-					great roles in previous seasons of Patna, but Pardeep Narwal is the main reason for their
-					success</p>
+				<h2 class="featurette-heading">Here comes the next giants.<br> <span class="text-muted">{{ team_info.1.name }}</span></h2>
+				<p class="lead">{{ team_info.1.description }}</p>
 			</div>
 			<div class="col-md-5 order-md-1">
-				<img class="poster-img" src="{% static 'home/teams/poster-2.jpg' %}">
+				<img class="poster-img" src="/media/{{ team_info.1.image }}">
 			</div>
 		</div>
 		
@@ -107,16 +99,11 @@
 		
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading">Following them is a south indian team.<br> <span class="text-muted">Bengaluru Bulls.</span>
-				</h2>
-				<p class="lead">Unlike IPL team of RCB, Bengaluru Bulls has great success when it comes to Kabaddi. They
-					are third successfull team in the entire PKL history, with a win percentage of 46.15% and a loss
-					percentage of 47.69%.
-					Their coach plays a major role in their success. No matter what kind of players they have, he always
-					finds a way to make it the best team</p>
+				<h2 class="featurette-heading">Followed by them, here goes.<br> <span class="text-muted">{{ team_info.2.name }}</span></h2>
+				<p class="lead">{{ team_info.2.description }}</p>
 			</div>
 			<div class="col-md-5">
-				<img class="poster-img" src="{% static 'home/teams/poster-3.jpg' %}">
+				<img class="poster-img" src="/media/{{ team_info.2.image }}">
 			</div>
 		</div>
 		

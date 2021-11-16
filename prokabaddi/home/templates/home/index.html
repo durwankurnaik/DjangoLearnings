@@ -73,11 +73,10 @@
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/pardeep.jpg' %}">
+						<img class="player-images" src="/media/{{ top_raiders.0.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Pardeep Narwal</strong><br>He started his journey with Bengaluru Bulls and was a substitute for the team.
-				In season 3, he was in his prime He has 1160 Raid points in his PKL career</p>
+							<p class="card-text"><strong>{{ top_raiders.0.name }}</strong><br>{{ top_raiders.0.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -85,11 +84,10 @@
 				</div>
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/rahul.jpg' %}">
+						<img class="player-images" src="/media/{{ top_raiders.1.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Rahul Chaudhari</strong><br>He was the star player for Telugu Titans from start. He was the first player to reach
-				the target of 500 raid points in PKL. He holds 955 raid points as of 2019</p>
+							<p class="card-text"><strong>{{ top_raiders.1.name }}</strong><br>{{ top_raiders.1.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -97,11 +95,10 @@
 				</div>
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/deepak.jpg' %}">
+						<img class="player-images" src="/media/{{ top_raiders.2.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Deepak Hooda</strong><br>One of the best all-rounders. played for various teams like Telugu Titans, Puneri
-				Paltan, Jaipur Pink Panthers. He holds 858 raid points by his side</p>
+							<p class="card-text"><strong>{{ top_raiders.2.name }}</strong><br>{{ top_raiders.2.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -115,11 +112,10 @@
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/manjeet.jpg' %}">
+						<img class="player-images" src="/media/{{ top_defenders.0.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Manjeet Chillaer</strong><br>One of the most reliable player and a great captain. Manjeet holds the most tackle
-				points on his side. He has 339 tackle points by his side</p>
+							<p class="card-text"><strong>{{ top_defenders.0.name }}</strong><br>{{ top_defenders.0.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -127,11 +123,10 @@
 				</div>
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/ravindar.jpg' %}">
+						<img class="player-images" src="/media/{{ top_defenders.1.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Ravindar Pahal</strong><br>Ravindar is a aggresive and a fierce player. He always gets his tackle successfully
-				executed. He holds 326 tackle points in his name</p>
+							<p class="card-text"><strong>{{ top_defenders.1.name }}</strong><br>{{ top_defenders.1.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -139,11 +134,10 @@
 				</div>
 				<div class="col">
 					<div class="card shadow-sm">
-						<img class="player-images" src="{% static 'home/players/fazal.jpg' %}">
+						<img class="player-images" src="/media/{{ top_defenders.2.image }}">
 						
 						<div class="card-body">
-							<p class="card-text"><strong>Fazal Atrachali</strong><br>The Iranian player started his journey with Patna pirates now plays for U mumba. He has
-				317 tackle points in his PKL career</p>
+							<p class="card-text"><strong>{{ top_defenders.2.name }}</strong><br>{{ top_defenders.2.description }}</p>
 							<div class="d-flex justify-content-between align-items-center">
 							</div>
 						</div>
@@ -176,68 +170,68 @@
 	</thead>
 	<tbody>
 	<tr>
-		<th scope="row">1</th>
-		<td>Dabang Delhi K.C.</td>
-		<td>22</td>
-		<td>14</td>
-		<td>5</td>
-		<td>3</td>
+		<th scope="row">{{ points_table.0.rank }}</th>
+		<td>{{ points_table.0.name }}</td>
+		<td>{{ points_table.0.played }}</td>
+		<td>{{ points_table.0.won }}</td>
+		<td>{{ points_table.0.loss }}</td>
+		<td>{{ points_table.0.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">2</th>
-		<td>Bengal Warriors</td>
-		<td>22</td>
-		<td>12</td>
-		<td>8</td>
-		<td>2</td>
+		<th scope="row">{{ points_table.1.rank }}</th>
+		<td>{{ points_table.1.name }}</td>
+		<td>{{ points_table.1.played }}</td>
+		<td>{{ points_table.1.won }}</td>
+		<td>{{ points_table.1.loss }}</td>
+		<td>{{ points_table.1.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">3</th>
-		<td>U.P. Yoddha</td>
-		<td>22</td>
-		<td>13</td>
-		<td>7</td>
-		<td>2</td>
+		<th scope="row">{{ points_table.2.rank }}</th>
+		<td>{{ points_table.2.name }}</td>
+		<td>{{ points_table.2.played }}</td>
+		<td>{{ points_table.2.won }}</td>
+		<td>{{ points_table.2.loss }}</td>
+		<td>{{ points_table.2.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">4</th>
-		<td>U Mumba</td>
-		<td>22</td>
-		<td>12</td>
-		<td>8</td>
-		<td>2</td>
+		<th scope="row">{{ points_table.3.rank }}</th>
+		<td>{{ points_table.3.name }}</td>
+		<td>{{ points_table.3.played }}</td>
+		<td>{{ points_table.3.won }}</td>
+		<td>{{ points_table.3.loss }}</td>
+		<td>{{ points_table.3.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">5</th>
-		<td>Haryana Steelers</td>
-		<td>22</td>
-		<td>11</td>
-		<td>10</td>
-		<td>1</td>
+		<th scope="row">{{ points_table.4.rank }}</th>
+		<td>{{ points_table.4.name }}</td>
+		<td>{{ points_table.4.played }}</td>
+		<td>{{ points_table.4.won }}</td>
+		<td>{{ points_table.4.loss }}</td>
+		<td>{{ points_table.4.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">6</th>
-		<td>Bengaluru Bulls</td>
-		<td>22</td>
-		<td>11</td>
-		<td>10</td>
-		<td>1</td>
+		<th scope="row">{{ points_table.5.rank }}</th>
+		<td>{{ points_table.5.name }}</td>
+		<td>{{ points_table.5.played }}</td>
+		<td>{{ points_table.5.won }}</td>
+		<td>{{ points_table.5.loss }}</td>
+		<td>{{ points_table.5.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">7</th>
-		<td>Jaipur Pink Panthers</td>
-		<td>22</td>
-		<td>9</td>
-		<td>11</td>
-		<td>2</td>
+		<th scope="row">{{ points_table.6.rank }}</th>
+		<td>{{ points_table.6.name }}</td>
+		<td>{{ points_table.6.played }}</td>
+		<td>{{ points_table.6.won }}</td>
+		<td>{{ points_table.6.loss }}</td>
+		<td>{{ points_table.6.tie }}</td>
 	</tr>
 	<tr>
-		<th scope="row">8</th>
-		<td>Patna Pirates</td>
-		<td>22</td>
-		<td>8</td>
-		<td>13</td>
-		<td>1</td>
+		<th scope="row">{{ points_table.7.rank }}</th>
+		<td>{{ points_table.7.name }}</td>
+		<td>{{ points_table.7.played }}</td>
+		<td>{{ points_table.7.won }}</td>
+		<td>{{ points_table.7.loss }}</td>
+		<td>{{ points_table.7.tie }}</td>
 	</tr>
 	</tbody>
 </table>
