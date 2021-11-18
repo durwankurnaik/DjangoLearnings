@@ -40,21 +40,8 @@
 		</div>
 	</div>
 </div>
-
-
-<br>
-<div class="row">
-	<div class="col">
-		<div class="card card-body">
-			<form method="get">
-
-		    <button class="btn btn-primary" type="submit">Search</button>
-		  </form>
-		</div>
-	</div>
 	
-</div>
-<br>
+	<br>
 
 <div class="row">
 	<div class="col-md">
@@ -76,8 +63,8 @@
 					<td>{{entry.name}}</td>
 					<td>{{entry.city}}</td>
 					<td>{{entry.age}}</td>
-					<td><a class="btn btn-sm btn-info" href="">Update</a></td>
-					<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'update_entry' entry.id %}">Update</a></td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_entry' entry.id %}">Remove</a></td>
 				</tr>
 				{% endfor %}
 
