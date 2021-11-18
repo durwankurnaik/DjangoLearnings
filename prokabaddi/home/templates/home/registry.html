@@ -1,0 +1,46 @@
+{% extends 'home/basic.html' %}
+
+{% block title %}Registry | ProKabaddi{% endblock %}
+
+{% block css %}
+.btn-wide {
+margin-top: 10px;
+margin-bottom: 10px;
+width: 1300px;
+border: 1px solid black;
+background-color: blue;
+color: white;
+}
+.btn-wide:hover {
+background-color: white;
+color: black;
+}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<a href="create_entry" class="btn btn-wide">Create a new entry</a>
+	<table class="table table-hover">
+		<tr>
+			<th>Action</th>
+			<th>ID no</th>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Place</th>
+			<th>Age</th>
+		</tr>
+		{% for entries in entry %}
+		<tr>
+			<td><a href="{% url 'entries' entries.id %}" class="btn-spacing btn btn-outline-info btn-sm btn-block">View</a></td>
+			<td>{{ entries.id }}</td>
+			<td>{{ entries.user }}</td>
+			<td>{{ entries.name }}</td>
+			<td>{{ entries.city }}</td>
+			<td>{{ entries.age }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% endblock %}

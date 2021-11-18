@@ -1,0 +1,89 @@
+{% extends 'home/basic.html' %}
+
+{% block title %}Entries | ProKabaddi{% endblock %}
+
+{% block css %}
+.btn-spacing {
+	margin-bottom: 5px;
+}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Entry:</h5>
+			<hr>
+			<a class="btn-spacing btn btn-outline-info btn-sm btn-block" href="{% url 'update_entry' entry.id %}">Update Entry</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'delete_entry' entry.id %}">Delete Entry</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Entry Information</h5>
+			<hr>
+			<p>Username: {{entry.user}}</p>
+			<p>Name: {{entry.name}}</p>
+			<p>Place: {{entry.city}}</p>
+			<p>Age: {{entry.age}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total Entries</h5>
+			<hr>
+			<h1 style="text-align: center;padding: 10px">{{count}}</h1>
+		</div>
+	</div>
+</div>
+
+
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+	
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Username</th>
+					<th>Name</th>
+					<th>Place</th>
+					<th>Age</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+				{% for entry in all_data %}
+
+				<tr>
+					<td>{{entry.user}}</td>
+					<td>{{entry.name}}</td>
+					<td>{{entry.city}}</td>
+					<td>{{entry.age}}</td>
+					<td><a class="btn btn-sm btn-info" href="">Update</a></td>
+					<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

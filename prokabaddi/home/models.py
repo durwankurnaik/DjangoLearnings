@@ -5,10 +5,10 @@ from django.db import models
 
 
 class Register(models.Model):
-    user = models.CharField(max_length=25)
-    name = models.CharField(max_length=50)
-    city = models.CharField(max_length=25)
-    age = models.IntegerField()
+    user = models.CharField(max_length=25, null=True)
+    name = models.CharField(max_length=50, null=True)
+    city = models.CharField(max_length=25, null=True)
+    age = models.IntegerField(null=True)
 
     def __str__(self):
         return self.user

@@ -1,5 +1,7 @@
 {% extends 'home/basic.html' %}
 
+{% block title %}Players | ProKabaddi{% endblock %}
+
 {% block css %}
 		.block-image {
 			height: 50vh;
@@ -33,7 +35,7 @@
 	<div class="album bg-light">
 		<div class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-				{% for i in players %}
+				{% for i in player_info %}
 				<div class="col">
 					<div class="card shadow-sm">
 						<img class="player-images" src="/media/{{ i.image }}">

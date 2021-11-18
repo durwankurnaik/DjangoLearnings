@@ -1,0 +1,10 @@
+{% extends 'home/basic.html' %}
+
+{% block title %}Create Entry | ProKabaddi{% endblock %}
+{% block content %}
+<form action="" class="mt-4 container" method="post">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit">
+</form>
+{% endblock %}
