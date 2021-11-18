@@ -8,10 +8,10 @@ class Register(models.Model):
     user = models.CharField(max_length=25)
     name = models.CharField(max_length=50)
     city = models.CharField(max_length=25)
-    dob = models.DateField()
+    age = models.IntegerField()
 
     def __str__(self):
-        return self.user + ', ' + self.name
+        return self.user
 
 
 class Player(models.Model):

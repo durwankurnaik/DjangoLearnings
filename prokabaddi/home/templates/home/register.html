@@ -1,167 +1,98 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1" name="viewport">
-	
-	<!-- Bootstrap CSS -->
-	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
-	
-	<title>Register | Pro Kabaddi League</title>
-	<style>
-		.heading {
-			text-align: center;
-		}
-		.sometext {
-			text-align: center;
-			margin-top: 50px;
-			margin-bottom: 50px;
-			text-decoration: underline;
-		}
-	
-	</style>
-</head>
-<body class="bg-light">
-<!--  Header-->
-<header class="d-flex justify-content-center bg-dark py-3">
-	<ul class="nav nav-pills">
-		<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-		<li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
-		<li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
-		<li class="nav-item"><a aria-current="page" class="nav-link active" href="/register">Register</a></li>
-	</ul>
-</header>
+{% extends 'home/basic.html' %}
 
+{% block css %}
+	.heading {
+	text-align: center;
+}
+.sometext {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-decoration: underline;
+}
+	.delete-btn {
+	background-color: red;
+	color: white;
+}
+.form-block {
+	width: 650px;
+}
+.create-check {
+	margin-right: 5px;
+}
+{% endblock %}
+
+{% block content %}
 <h2 class="container heading mt-3">Please fill all the fields below</h2>
 <h4 class="heading small">Enter correct information. this won't be changed again</h4>
 
-<div class="mb-3 mt-3 container">
-	<label class="form-label mt-3" for="exampleFormControlInput1">ID no</label>
-	<input class="form-control" id="exampleFormControlInput1" name="player_id" type="number">
-	
-	<label class="form-label mt-3" for="exampleFormControlInput2">User name</label>
-	<input class="form-control" id="exampleFormControlInput2" name="username" type="text">
-	
-	<label class="form-label mt-3" for="exampleFormControlInput3">Full Name</label>
-	<input class="form-control" id="exampleFormControlInput3" name="name" type="text">
-	
-	<label class="form-label mt-3" for="exampleFormControlInput4">Place</label>
-	<input class="form-control" id="exampleFormControlInput4" name="place" type="text">
-	
-	<label class="form-label mt-3" for="exampleFormControlInput5">Date of Birth</label>
-	<input class="form-control" id="exampleFormControlInput5" name="dob" type="date">
+
+<div class="form-block mb-3 mt-3 container">
+	<form action="registered" method="post">{% csrf_token %}
+		<label class="form-label mt-3" for="exampleFormControlInput2">User name</label>
+		<input class="form-control" id="exampleFormControlInput2" name="username" type="text">
+		
+		<label class="form-label mt-3" for="exampleFormControlInput3">Full Name</label>
+		<input class="form-control" id="exampleFormControlInput3" name="name" type="text">
+		
+		<label class="form-label mt-3" for="exampleFormControlInput4">Place</label>
+		<input class="form-control" id="exampleFormControlInput4" name="place" type="text">
+		
+		<label class="form-label mt-3" for="exampleFormControlInput5">Age</label>
+		<input class="form-control" id="exampleFormControlInput5" name="age" type="number">
+		<div class="col-12">
+			
+			<button type="submit" name="Submit" class="btn mt-3 btn-primary create"><input type="checkbox" class="create-check" name="create">Create</button>
+			<button type="reset" name="Reset" class="btn mt-3 btn-primary">Reset</button>
+	    </div>
+	</form>
 </div>
 
 <div class="mt-3 mb-3">
 	<h2 class="sometext">New Player Entries</h2>
 </div>
 
-<table class="table container table-striped">
+<table class="table container">
 	<thead>
 	<tr>
 		<th scope="col">Sr no</th>
 		<th scope="col">UserName</th>
 		<th scope="col">Name</th>
 		<th scope="col">Place</th>
-		<th scope="col">Date of Birth</th>
+		<th scope="col">Age</th>
+<!--		<th scope="col">Action</th>-->
 	</tr>
 	</thead>
 	<tbody>
+<!--	<form action="deleted" method="post">{% csrf_token %}-->
+	{% for i in registers %}
 	<tr>
-		<th scope="row">1</th>
-		<td>sparrxw</td>
-		<td>Durwankur Naik</td>
-		<td>Vengurla</td>
-		<td>14-03-2002</td>
+		<th scope="row">
+			<input class="form-control bg-light" name="player_id" placeholder="{{ i.id }}" type="text">
+		</th>
+		<td>
+			<input class="form-control bg-light" name="username" placeholder="{{ i.user }}" type="text">
+		</td>
+		<td>
+			<input class="form-control bg-light" name="name" placeholder="{{ i.name }}" type="text">
+		</td>
+		<td>
+			<input class="form-control bg-light" name="place" placeholder="{{ i.city }}" type="text">
+		</td>
+		<td>
+			<input class="form-control bg-light" name="age" placeholder="{{ i.age }}" type="text">
+		</td>
+<!--		<td>-->
+<!--			<div class="d-flex justify-content-between align-items-center">-->
+<!--                <div class="btn-group">-->
+<!--                  <button type="submit" class="btn btn-sm btn-outline-secondary"><input type="checkbox" class="create-check" name="update">Update</button>-->
+<!--                  <button type="submit" class="delete-btn btn btn-sm btn-outline-secondary"><input type="checkbox" class="create-check" name="name">Delete</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--		</td>-->
 	</tr>
-	<tr>
-		<th scope="row">2</th>
-		<td>Fusion</td>
-		<td>Anmol Dhar</td>
-		<td>Jammu</td>
-		<td>17-07-2001</td>
-	</tr>
-	<tr>
-		<th scope="row">3</th>
-		<td>Gh0s7</td>
-		<td>Shreyas Patole</td>
-		<td>Nagpur</td>
-		<td>29-09-2001</td>
-	</tr>
-	<tr>
-		<th scope="row">4</th>
-		<td>Rasty Ross</td>
-		<td>Sashwat Rout</td>
-		<td>Pune</td>
-		<td>22-10-2001</td>
-	</tr>
-	<!--    Just creating test rows to fill data later from database-->
-	<tr>
-		<th scope="row">5</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">6</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">7</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">8</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">9</th>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
+	{% endfor %}
+<!--	</form>-->
 	</tbody>
 </table>
-
-<!--Footer-->
-<footer class="d-flex flex-wrap justify-content-between align-items-center container py-3 my-4 border-top">
-	<p class="col-md-4 mb-0 text-muted">© 2021 Pro Kabaddi, Inc</p>
-	
-	<ul class="nav col-md-4 justify-content-end">
-		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/">Home</a></li>
-		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/players">Players</a></li>
-		<li class="nav-item"><a class="nav-link px-2 text-muted" href="/teams">Teams</a></li>
-		<li class="nav-item"><a class="nav-link px-2 text-muted active" href="/register">Register</a></li>
-	</ul>
-</footer>
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script crossorigin="anonymous"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
-</body>
-</html>
-
-
-
+{% endblock %}
