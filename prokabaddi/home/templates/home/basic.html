@@ -1,4 +1,11 @@
-<!doctype html>
+<!doctyclass Player(models.Model):
+    player_num = models.IntegerField(default=0)
+    name = models.CharField(max_length=50)
+    age = models.IntegerField(default=0)
+    team_name = models.CharField(max_length=50)
+    player_type = models.CharField(max_length=25)
+    description = models.CharField(max_length=500, default="")
+    image = models.ImageField()pe html>
 <html lang="en">
 <head>
 	<!-- Required meta tags -->
